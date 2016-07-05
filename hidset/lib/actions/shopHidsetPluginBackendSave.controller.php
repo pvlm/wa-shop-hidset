@@ -15,9 +15,13 @@ class shopHidsetPluginBackendSaveController extends waJsonController
                 if (strpos($value, ',') || intval($value) != $value  || $value < 1) {
                     $error .=  $key . ' ';
                     $check_error = true;
+                }else{
+                    $allsets[$key] = intval($value);                    
                 }
+            }else{
+                $allsets[$key] = $value;
             }
-            $allsets[$key] = $value;
+            
         }
         
         if (! $check_error) {

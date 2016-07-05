@@ -10,19 +10,19 @@ class shopHidsetPlugin extends shopPlugin
         ),
         'reviews_per_page_total' => array(
             'type' => 'int',
-            'desc' => 'Количество отзывов '
+            'desc' => 'Количество отзывов на одной странице/за одну загрузку lazyloading в бэкенде в разделе Товары - Отзывы'
         ),
         'reviews_per_page_product' => array(
             'type' => 'int',
-            'desc' => ''
+            'desc' => 'Количество отображаемых отзывов о продукте на витрине магазина'
         ),
         'review_highlight_time' => array(
             'type' => 'int',
-            'desc' => ''
+            'desc' => 'Время "подсветки" отзыва о товаре как нового. В секундах'
         ),
         'products_default_view' => array(
             'type' => 'select',
-            'desc' => '',
+            'desc' => 'Вид списков товаров по умолчанию для нового пользователя бекэнда. Если пользователь уже заходил в бекэнд и переключал режимы просмотра товаров, данная опция игнорируется',
             'value' => array(
                 'thumb',
                 'table',
@@ -31,7 +31,7 @@ class shopHidsetPlugin extends shopPlugin
         ),
         'product_orders_per_page' => array(
             'type' => 'int',
-            'desc' => ''
+            'desc' => 'Количество заказов отображаемых по умолчанию на вкладке Последние заказы в режиме просмотра товара в бекэнде Магазина'
         ),
         'types_per_page' => array(
             'type' => 'int',
@@ -43,19 +43,19 @@ class shopHidsetPlugin extends shopPlugin
         ),
         'statrows_per_page' => array(
             'type' => 'int',
-            'desc' => ''
+            'desc' => 'Количество строк отображаемых по умолчанию и подгружаемых по ссылке Показать еще в разделе Отчеты'
         ),
         'orders_update_list' => array(
             'type' => 'int',
-            'desc' => ''
+            'desc' => 'Частота обновления списка заказов в бекэнде (в милисекундах)'
         ),
         'stocks_log_items_per_page' => array(
             'type' => 'int',
-            'desc' => ''
+            'desc' => 'Количество строк отображаемых на вкладке товара Журнал изменения остатков за одну загрузку lazyloading в бэкенде'
         ),
         'marketing_expenses_per_page' => array(
             'type' => 'int',
-            'desc' => ''
+            'desc' => 'Количество строк отображаемых по умолчанию в отчете Затраты на маркетинг'
         ),
         'customers_per_page' => array(
             'type' => 'int',

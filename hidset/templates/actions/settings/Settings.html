@@ -1,4 +1,5 @@
 <h1>Скрытые настройки</h1>
+<h3>Обратите внимание! Не изменяйте значения параметров если не уверены в том, для чего нужен тот или иной параметр, или же сомневаетесь в правильности его использования</h3>
 <div class="block double-padded">
 	<form id="hidset-form" action="?plugin=hidset&action=save" method="post">
 	<table class="zebra">
@@ -25,34 +26,7 @@
 		</tr>
 		{/foreach}
 	</table>
-<!-- 		{foreach $hsets as $key => $value}
-			{if $value.type == 'int'}
-				<div class="field" style="display: block;">
-					<div class="name">{$key}</div>
-					<div class="value no-shift">
-						<input type="text" style="width: 100px; min-width: 100px;" name="{$key}" value="{if isset($allsets.$key)}{$allsets.$key}{/if}" />
-					</div>
-					<div class="value">
-						<p class="hint">{$value.desc}</p>
-					</div>		
-				</div>		
-			{else}
-				<div class="field" style="display: block;">
-					<div class="name">{$key}</div>
-					<div class="value no-shift">
-						<select name="{$key}">
-							{foreach $value.value as $option}
-									<option value={$option}>{$option}</option>
-							{/foreach}
-						</select>
-					</div>
-					<div class="value">
-						<p class="hint">{$value.desc}</p>
-					</div>		
-				</div>	
-			{/if}
-		{/foreach}
- -->		
+	<br><br><br>
 		<input type="button" value="Сохранить" class="button green" id="hidset-save"/><i id="hidset-gif" class="icon16 loading" style="display: none;"></i><i id="hidset-yes" class="icon16 yes" style="display: none;"></i><i id="hidset-no" class="icon16 no" style="display: none;"></i>
 		<p id="hidset-errtxt" style="display: none;">В следующих параметрах указаны некорректные значения. Значения должны быть целым положительным числом: </p>
 		<strong id="hidset-errmsg"></strong>
