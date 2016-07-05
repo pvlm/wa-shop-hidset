@@ -1,0 +1,1 @@
+Плагин для Webasyst ShopScript "Скрытые настройки"
