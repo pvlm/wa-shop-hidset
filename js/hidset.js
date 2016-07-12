@@ -16,6 +16,9 @@ $(document).ready(function (){
 				$('#hidset-errmsg').show();
 				$('#hidset-no').show();
 			}else{
+				for(var i in data.data){
+					$('#'+i).attr('value', data.data[i]);
+				}
 				$('#hidset-yes').show();
 			}
 		}, 'json');

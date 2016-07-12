@@ -12,11 +12,11 @@ class shopHidsetPluginBackendSaveController extends waJsonController
         $data = waRequest::post();
         foreach ($data as $key => $value) {
             if ($hsets[$key]['type'] == 'int') {
-                if (strpos($value, ',') || intval($value) != $value  || $value < 1) {
+                if(!(int)$value){
                     $error .=  $key . ' ';
                     $check_error = true;
                 }else{
-                    $allsets[$key] = intval($value);                    
+                    $allsets[$key] = $data[$key] = intval($value);
                 }
             }else{
                 $allsets[$key] = $value;
@@ -32,6 +32,6 @@ class shopHidsetPluginBackendSaveController extends waJsonController
             $this->setError($error);
         }
         
-        $this->response;
+        $this->response = $data;
     }
 }

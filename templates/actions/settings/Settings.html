@@ -13,7 +13,7 @@
 		<td><strong>{$key}</strong></td>
 		<td>
 			{if $value.type == 'int'}
-				<input type="text" style="width: 100px; min-width: 100px;" name="{$key}" value="{if isset($allsets.$key)}{$allsets.$key}{/if}" />
+				<input type="text" style="width: 100px; min-width: 100px;" id="{$key}" name="{$key}" value="{if isset($allsets.$key)}{$allsets.$key}{/if}" />
 			{else}
 				<select name="{$key}">
 					{foreach $value.value as $option}
