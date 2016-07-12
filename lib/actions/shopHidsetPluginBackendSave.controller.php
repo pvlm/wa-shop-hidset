@@ -12,7 +12,7 @@ class shopHidsetPluginBackendSaveController extends waJsonController
         $data = waRequest::post();
         foreach ($data as $key => $value) {
             if ($hsets[$key]['type'] == 'int') {
-                if(!(int)$value || (int)$value < 0){
+                if(!(int)$value || (int)$value < 0  || (isset($hsets[$key]['limit']) && $value > $hsets[$key]['limit'])){
                     $error .=  $key . ' ';
                     $check_error = true;
                 }else{
