@@ -20,6 +20,7 @@ class shopHidsetPluginBackendSaveController extends waJsonController
                 }
             }else{
                 $allsets[$key] = $value;
+                unset($data[$key]);
             }
             
         }
