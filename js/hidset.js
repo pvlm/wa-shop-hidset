@@ -17,7 +17,14 @@ $(document).ready(function (){
 				$('#hidset-no').show();
 			}else{
 				for(var i in data.data){
-					$('#'+i).attr('value', data.data[i]);
+					var tmp = data.data[i];
+					if(typeof(tmp) == "object"){
+						for(var j in tmp){
+							$('#'+i+"_"+j).attr('value', tmp[j]);
+						}
+					}else{
+						$('#'+i).attr('value', data.data[i]);
+					}
 				}
 				$('#hidset-yes').show();
 			}

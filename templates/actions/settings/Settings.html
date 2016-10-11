@@ -5,6 +5,7 @@
 	<table class="zebra">
 	<tr>
 		<th>Название параметра</th>
+		<th></th>
 		<th>Значение</th>
 		<th>Краткое описание</th>
 	</tr>
@@ -12,14 +13,33 @@
 		<tr>
 		<td><strong>{$key}</strong></td>
 		<td>
+			{if $value.type == 'array'}
+				<table style="margin-bottom: 0em;">
+				{foreach $value.value as $option}
+					<tr><td style="background: inherit;">
+					{$option.name}
+					</td></tr>
+				{/foreach}
+				</table>
+			{/if}
+		</td>
+		<td>
 			{if $value.type == 'int'}
-				<input type="text" style="width: 100px; min-width: 100px;" id="{$key}" name="{$key}" value="{if isset($allsets.$key)}{$allsets.$key}{/if}" />
-			{else}
+				<input type="text" style="width: 120px; min-width: 120px;" id="{$key}" name="{$key}" value="{if isset($allsets.$key)}{$allsets.$key}{/if}" />
+			{elseif $value.type == 'select'}
 				<select name="{$key}">
 					{foreach $value.value as $option}
 						<option value={$option} {if isset($allsets.$key) && $allsets.$key == $option}selected="selected"{/if}>{$option}</option>
 					{/foreach}
 				</select>
+			{else}
+				<table style="margin-bottom: 0em;">
+				{foreach $value.value as $option}
+					<tr><td style="background: inherit;">
+					<input type="text" style="width: 30px; min-width: 30px;" id="{$key}_{$option.name}" name="{$key}[{$option.name}]" value="{if isset($allsets.$key[$option.name])}{$allsets.$key[$option.name]}{/if}" />
+					</td></tr>
+				{/foreach}
+				</table>
 			{/if}
 		</td>
 		<td style="font-size: 0.85em;">{$value.desc}</td>

@@ -68,6 +68,14 @@ class shopHidsetPlugin extends shopPlugin
                 'true',
                 'false'
             )
+        ),
+        'orders_per_page' => array(
+            'type' => 'array',
+            'desc' => 'Количество заказов отображаемых в разделе Заказы магазина при различных режимах просмотра / за одну загрузку lazyloading',
+            'value' => array(
+                array('name' => 'split', 'type' => 'int'),
+                array('name' => 'table', 'type' => 'int')
+            )
         )
     );
 }
