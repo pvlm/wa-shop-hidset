@@ -76,6 +76,14 @@ class shopHidsetPlugin extends shopPlugin
                 array('name' => 'split', 'type' => 'int'),
                 array('name' => 'table', 'type' => 'int')
             )
-        )
+        ),
+        'filters_features' => array(
+            'type' => 'select',
+            'desc' => 'Метод наложения фильтров. Изменять только в случае если при использовании join сильно нагружается сервер',
+            'value' => array(
+                'join',
+                'exists'
+            )
+        ),
     );
 }
